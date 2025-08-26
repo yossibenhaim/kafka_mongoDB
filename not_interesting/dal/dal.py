@@ -5,7 +5,7 @@ import os
 class DAL:
     def __init__(self):
         self.client = None
-        self.host = os.getenv("DB_HOST", "localhost")
+        self.host = os.getenv("DB_HOST", "mongodb")
         self.db_name = os.getenv("DB_NAME", "kafka_mongoDB")
         self.db_coll = os.getenv("DB_COLL", "not_interesting")
         self.db_port = os.getenv("BD_PORT", "27017")

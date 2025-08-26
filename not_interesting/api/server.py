@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException
-from interesting.manager import Manager
+from ..manager import Manager
 
 app = FastAPI()
 manager = Manager()

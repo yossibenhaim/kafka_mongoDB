@@ -1,7 +1,7 @@
 #Lib's
 import uvicorn
 #Classes
-from interesting.api import server
+from not_interesting.api import server
 
 app = server.app
 

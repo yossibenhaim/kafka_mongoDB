@@ -1,5 +1,5 @@
-from interesting.dal.dal import DAL
-from interesting.utils import Utils
+from not_interesting.dal.dal import DAL
+from not_interesting.utils import Utils
 
 class Manager:
     def __init__(self):

@@ -6,10 +6,12 @@ manager = Manager()
 
 consumer = KafkaConsumer(
     'interesting',
-    bootstrap_servers='localhost:9092',
+    bootstrap_servers='broker:9092',
+    api_version=(0, 11, 5),
     group_id='my-group',
     auto_offset_reset='earliest',
-    value_deserializer=lambda m: json.loads(m.decode('utf-8'))
+    value_deserializer=lambda m: json.loads(m.decode('utf-8')),
+    request_timeout_ms=100000
 )
 
 print("interesting מקשיב להודעות...")
