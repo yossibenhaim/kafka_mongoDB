@@ -1,5 +1,5 @@
 from kafka import KafkaConsumer
-from manager import Manager
+from interesting.manager import Manager
 import json
 
 manager = Manager()

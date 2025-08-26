@@ -7,7 +7,7 @@ class DAL:
         self.client = None
         self.host = os.getenv("DB_HOST", "localhost")
         self.db_name = os.getenv("DB_NAME", "kafka_mongoDB")
-        self.db_coll = os.getenv("DB_COLL", "interesting")
+        self.db_coll = os.getenv("DB_COLL", "not_interesting")
         self.db_port = os.getenv("BD_PORT", "27017")
 
     def connect(self):
@@ -52,7 +52,7 @@ class DAL:
             db = self.client[self.db_name]
             collection = db[self.db_coll]
             for k, v in data.items():
-                new_data = {k:v}
+                new_data = {"category":k,"data":v}
                 inserted_id = collection.insert_one(new_data).inserted_id
             # return {"added":inserted_id}
         except Exception as e:

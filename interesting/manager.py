@@ -1,4 +1,5 @@
-from dal.dal import DAL
+from interesting.dal.dal import DAL
+from interesting.utils import Utils
 
 class Manager:
     def __init__(self):
@@ -9,4 +10,5 @@ class Manager:
 
     def get_data_from_db(self):
         data = self.dal.get_all_data()
+        data = Utils.correct_the_id(data)
         return data

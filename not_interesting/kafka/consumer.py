@@ -1,9 +1,8 @@
 from kafka import KafkaConsumer
-from manager import Manager
+from interesting.manager import Manager
 import json
 
 manager = Manager()
-
 
 consumer = KafkaConsumer(
     'not_interesting',
@@ -16,5 +15,6 @@ consumer = KafkaConsumer(
 print("not_interesting מקשיב להודעות...")
 
 for message in consumer:
+    print(message.value)
     manager.insert_data_to_db(message.value)
     print("התקבלה הודעה:", message.value)

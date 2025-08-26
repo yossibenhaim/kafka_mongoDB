@@ -52,7 +52,7 @@ class DAL:
             db = self.client[self.db_name]
             collection = db[self.db_coll]
             for k, v in data.items():
-                new_data = {k:v}
+                new_data = {"category":k,"data":v}
                 inserted_id = collection.insert_one(new_data).inserted_id
             # return {"added":inserted_id}
         except Exception as e:
